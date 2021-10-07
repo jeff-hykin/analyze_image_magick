@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/ImageMagick/ImageMagick
 	branch = main
-	commit = b69f686cb3d7e1fd9984febc02c1fc4745b7a8ed
-	parent = b69f686cb3d7e1fd9984febc02c1fc4745b7a8ed
+	commit = a3c068017b549cc29ccea9f545af6c079d94c3bd
+	parent = 7c5a9441e512730316a4fc7a536b94199bc9ab6f
 	method = merge
 	cmdver = 0.4.1

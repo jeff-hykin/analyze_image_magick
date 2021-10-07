@@ -1,0 +1,5 @@
+- why do you think this is a vulerability
+- try to estimate the score
+  - maturity (proof of concept, functional, in use)
+  - remediation level (temp fix/no fix)
+  - report confidence (confirmed/unknown)

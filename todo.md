@@ -14,3 +14,11 @@ Write a Report
   - maturity (proof of concept, functional, in use)
   - remediation level (temp fix/no fix)
   - report confidence (confirmed/unknown)
+
+
+
+
+
+
+- Mention env var size limits
+- Mention TV / Watch OS, and sudo, and lack of stack space randomization

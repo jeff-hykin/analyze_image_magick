@@ -160,7 +160,7 @@ static Image *ReadURLImage(const ImageInfo *image_info,ExceptionInfo *exception)
       /*
         Leverage delegate to read HTTPS link.
       */
-      status=InvokeDelegate(read_info,image,"https:decode",(char *) NULL,
+      status=InvokeDelegate(read_info,image,"https:decode",(char *) NULL, // @note - InvokeDelegate() uses(access_utf8()) argsFrom(AcquireImage)
         exception);
       if (status != MagickFalse)
         {

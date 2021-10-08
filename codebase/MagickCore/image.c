@@ -131,7 +131,7 @@
 %    o exception: return any errors or warnings in this structure.
 %
 */
-MagickExport Image *AcquireImage(const ImageInfo *image_info,
+MagickExport Image *AcquireImage(const ImageInfo *image_info, // @note - def: AcquireImage()
   ExceptionInfo *exception)
 {
   const char

@@ -108,7 +108,7 @@ static inline wchar_t *create_wchar_path(const char *utf8)
 static inline int access_utf8(const char *path,int mode)
 {
 #if !defined(MAGICKCORE_WINDOWS_SUPPORT) || defined(__CYGWIN__)
-  return(access(path,mode));
+  return(access(path,mode)); // @note - call: access() -> _access_s()
 #else
    int
      status;
@@ -119,7 +119,7 @@ static inline int access_utf8(const char *path,int mode)
    path_wide=create_wchar_path(path);
    if (path_wide == (wchar_t *) NULL)
      return(-1);
-   status=_waccess(path_wide,mode);
+   status=_waccess(path_wide,mode); // @note - call: _waccess()
    path_wide=(wchar_t *) RelinquishMagickMemory(path_wide);
    return(status);
 #endif

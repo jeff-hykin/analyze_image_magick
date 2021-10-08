@@ -226,7 +226,7 @@ static Image *InvokeDNGDelegate(const ImageInfo *image_info,Image *image,
   image=AcquireImage(image_info,exception);
   read_info=CloneImageInfo(image_info);
   SetImageInfoBlob(read_info,(void *) NULL,0);
-  (void) InvokeDelegate(read_info,image,"dng:decode",(char *) NULL,exception);
+  (void) InvokeDelegate(read_info,image,"dng:decode",(char *) NULL,exception); // @note - InvokeDelegate() uses(access_utf8()) argsFrom(AcquireImage)
   image=DestroyImage(image);
   (void) FormatLocaleString(read_info->filename,MagickPathExtent,"%s.png",
     read_info->unique);

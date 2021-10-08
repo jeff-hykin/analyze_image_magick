@@ -1685,7 +1685,7 @@ static MagickBooleanType CopyDelegateFile(const char *source,
   return(i != 0 ? MagickTrue : MagickFalse);
 }
 
-MagickExport MagickBooleanType InvokeDelegate(ImageInfo *image_info,
+MagickExport MagickBooleanType InvokeDelegate(ImageInfo *image_info, // @note - def:InvokeDelegate()
   Image *image,const char *decode,const char *encode,ExceptionInfo *exception)
 {
   char
@@ -1888,7 +1888,7 @@ MagickExport MagickBooleanType InvokeDelegate(ImageInfo *image_info,
               Wait for input file to 'disappear', or maximum 2 seconds.
             */
             count=20;
-            while ((count-- > 0) && (access_utf8(image->filename,F_OK) == 0))
+            while ((count-- > 0) && (access_utf8(image->filename,F_OK) == 0)) // @note - call:access_utf8() -> access() / _waccess()
               (void) MagickDelay(100);  /* sleep 0.1 seconds */
           }
         command=DestroyString(command);

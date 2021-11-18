@@ -99,7 +99,7 @@ codebase/MagickCore/nt-base.h:104:  [4] (race) access:
     (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())
     and try to open the file directly.
 codebase/MagickCore/nt-base.h:177:  [4] (race) access:
-    This usually indicates a security flaw. If an attacker can change anything
+    This usually indicates a security flaw. If an attaryker can change anything
     along the path between the call to access() and the file's actual use
     (e.g., by moving files), the attacker can exploit the race condition
     (CWE-362/CWE-367!). Set up the correct permissions (e.g., using setuid())
@@ -8131,17 +8131,17 @@ codebase/coders/wmf.c:2167:  [1] (buffer) strlen:
 codebase/coders/wmf.c:2455:  [1] (buffer) strlen:
     Does not handle strings that are not \0-terminated; if given one it may
     perform an over-read (it could cause a crash if unprotected) (CWE-126).
-codebase/coders/xbm.c:241:  [1] (buffer) sscanf:
+NO codebase/coders/xbm.c:241:  [1] (buffer) sscanf:
     It's unclear if the %s limit in the format string is small enough
     (CWE-120). Check that the limit is sufficiently small, or use a different
     input function.
-codebase/coders/xbm.c:242:  [1] (buffer) strlen:
+NO codebase/coders/xbm.c:242:  [1] (buffer) strlen:
     Does not handle strings that are not \0-terminated; if given one it may
     perform an over-read (it could cause a crash if unprotected) (CWE-126).
-codebase/coders/xbm.c:243:  [1] (buffer) strlen:
+NO codebase/coders/xbm.c:243:  [1] (buffer) strlen:
     Does not handle strings that are not \0-terminated; if given one it may
     perform an over-read (it could cause a crash if unprotected) (CWE-126).
-codebase/coders/xbm.c:246:  [1] (buffer) sscanf:
+NO codebase/coders/xbm.c:246:  [1] (buffer) sscanf:
     It's unclear if the %s limit in the format string is small enough
     (CWE-120). Check that the limit is sufficiently small, or use a different
     input function.

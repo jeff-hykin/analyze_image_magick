@@ -1,6 +1,16 @@
 Write a Report
 
 - 10 Vulnerabilities
+    - 1. `getenv`
+        - Mention env var size limits
+        - Mention TV / Watch OS, and sudo, and lack of stack space randomization
+    - 2. 
+        - ./examples/blog/model/BlogSession.C:48:  [4] (crypto) crypt:
+    - 3. 
+        - ./examples/hangman/Session.C:44:  [4] (crypto) crypt:
+    - 4. 
+        -  ./src/Wt/Date/src/tz.cpp:3253
+        
 
 - include vulnerabilities from at least 3 of the following categories:
   1. Spatial Memory Attacks: Out-of-bound access, buffer/stack/heap overflow
@@ -11,14 +21,7 @@ Write a Report
 
 - why do you think this is a vulerability
 - try to estimate the score
-  - maturity (proof of concept, functional, in use)
-  - remediation level (temp fix/no fix)
   - report confidence (confirmed/unknown)
+  - remediation level (temp fix/no fix)
+  - maturity (proof of concept, functional, in use)
 
-
-
-
-
-
-- Mention env var size limits
-- Mention TV / Watch OS, and sudo, and lack of stack space randomization

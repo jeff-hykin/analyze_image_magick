@@ -55,7 +55,6 @@ RUN printf ' \
 # bashrc of user (do customize this)
 RUN printf ' \
     alias ll="ls -lA"                                \n\
-    alias make="mmake"                               \n\
     . /home/user1/.nix-profile/etc/profile.d/nix.sh  \n\
     flocal ()  {                                     \n\
         args="$@"                                    \n\

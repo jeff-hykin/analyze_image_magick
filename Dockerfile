@@ -30,13 +30,14 @@ RUN apt-get -y update && \
 # install packages/libraries
 # 
 RUN runuser -l user1 -c 'nix-env -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/7e9b0dff974c89e070da1ad85713ff3c20b0ca97.tar.gz -i \
-    gcc \
     libconfig \
     cmake \
     libkrb5 \
     ncurses \
     bat \
     '
+# needed a specific version of GCC
+RUN runuser -l user1 -c 'nix-env -i gcc-wrapper-7.5.0 -f https://github.com/NixOS/nixpkgs/archive/860b56be91fb874d48e23a950815969a7b832fbc.tar.gz'
 
 # bashrc of root (probably don't customize)
 RUN printf ' \

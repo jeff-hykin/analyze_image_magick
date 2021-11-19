@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/emweb/wt
+	branch = master
+	commit = ab34cbe5d4e3cf6d98c841ef3c38ef1f8a338119
+	parent = f0c8362a19c12e4c3bc464b2a4f2ada09bc15bd8
+	method = merge
+	cmdver = 0.4.1

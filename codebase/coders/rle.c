@@ -357,7 +357,7 @@ static Image *ReadRLEImage(const ImageInfo *image_info,ExceptionInfo *exception)
       ThrowRLEException(ResourceLimitError,"MemoryAllocationFailed");
     pixel_info_length=image->columns*image->rows*
       MagickMax(number_planes_filled,4);
-    pixels=(unsigned char *) GetVirtualMemoryBlob(pixel_info);
+    pixels=(unsigned char *) GetVirtualMemoryBlob(pixel_info); // @note VULN HERE
     (void) memset(pixels,0,pixel_info_length);
     if ((flags & 0x01) && !(flags & 0x02))
       {

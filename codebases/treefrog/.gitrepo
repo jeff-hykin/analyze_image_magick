@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/treefrogframework/treefrog-framework
+	branch = master
+	commit = 1afeceab7c2c9488f66f5661cba7b8d7865ed0ba
+	parent = b3e09f52cc866e74768f6b87241751a91cf5f122
+	method = merge
+	cmdver = 0.4.1

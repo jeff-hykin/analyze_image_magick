@@ -1,0 +1,53 @@
+language: cpp
+
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode12.2
+      sudo: required
+      env:
+        - CONFIG_SHARED_MONGOC="--enable-shared-mongoc"
+      addons:
+        homebrew:
+          update: true
+          packages:
+            - qt
+            - mongo-c-driver
+    - os: osx
+      osx_image: xcode10.3
+      sudo: required
+      env:
+        - CONFIG_SHARED_MONGOC=""
+       addons:
+         homebrew:
+           update: true
+           packages:
+             - qt
+             - mongo-c-driver
+env:
+  global:
+    - CI_WORK=$(pwd)
+
+install:
+  - cd ${CI_WORK}
+  - qmake -v
+  - ./configure --prefix=/usr/local ${CONFIG_SHARED_MONGOC}
+  - make -j4 -C src
+  - sudo make -C src install
+  - make -j4 -C tools
+  - sudo make -C tools install
+  - treefrog -v
+
+before_script:
+  - cd ${CI_WORK}
+  - cd tools/tmake/test
+  - qmake tmaketest.pro
+  - make
+
+script:
+  - cd ${CI_WORK}
+  - ./src/test/testall.sh
+  - cd ${CI_WORK}/tools/tmake/test
+  - ./tmaketest
+  - cd ${CI_WORK}/tools/test
+  - ./releasetest/releasetest

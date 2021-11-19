@@ -1,0 +1,20 @@
+title:        TreeFrog Framework
+markdown:     kramdown
+highlighter:  rouge
+
+github:       [metadata]
+repository:   https://github.com/treefrogframework/treefrog-framework
+plugins_dir:  [markdown]
+theme:        jekyll-theme-slate
+baseurl:      ""
+url:          https://treefrogframework.github.io
+
+# Server
+port: 		  4000
+encoding: 	  utf-8
+
+# Bug?
+# https://github.com/jekyll/jekyll/issues/7858#event-2707074897
+kramdown:
+  syntax_highlighter_opts:
+    default_lang: plaintext

@@ -54,9 +54,52 @@ string Type(ANYTYPE input)
     }
 
 
-
 int main(int argc, char *argv[])
     {
+        // 
+        // VULN 3
+        // 
+        // // stand-in definition
+        // string get_install() {
+        //     return "hi";
+        // }
+        // // stand-in definition
+        // void delete_file(string) {
+        //     return;
+        // }
+        // // this is likely to be true
+        // #define USE_SHELL_API 1
+        // 
+        // // unmodified extract_gz_file()
+        // static
+        // bool
+        // extract_gz_file(const std::string&, const std::string& gz_file, const std::string&)
+        // {
+        // #    if USE_SHELL_API
+        //     bool unzipped = std::system(("tar -xzf " + gz_file + " -C " + get_install()).c_str()) == EXIT_SUCCESS;
+        // #    else  // !USE_SHELL_API
+        //     const char prog[] = {"/usr/bin/tar"};
+        //     const char*const args[] =
+        //     {
+        //         prog, "-xzf", gz_file.c_str(), "-C", get_install().c_str(), nullptr
+        //     };
+        //     bool unzipped = (run_program(prog, args) == EXIT_SUCCESS);
+        // #    endif // !USE_SHELL_API
+        //     if (unzipped)
+        //     {
+        //         delete_file(gz_file);
+        //         return true;
+        //     }
+        //     return false;
+        // }
+        // char file[4096], gz_file[] = "date-utils", extension[] = ".tar";
+        // // this can be influenced
+        // char version[] = "12.2 2>/dev/null;cd /Users/jeffhykin/repos/standard_install/manual_resources/scratchwork; cat jackpot.txt; exit;";
+        // strcat(file, gz_file);
+        // strcat(file, version);
+        // strcat(file, extension);
+        // extract_gz_file("", file, "");
+        
         // 
         // VULN 2
         // 

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+cd /project/old_versions.ignore/ImageMagick
+export CXXFLAGS="-O0 -fsanitize=address,undefined" # dont optimize, do sanitize
+./configure
+make
+cd /project/old_versions.ignore/ImageMagick; make install; ldconfig /usr/local/lib
+
+rm -f jackpot.gray; magick convert /project/resources/133_byte_payload.psd jackpot.gray
+od -t x1 jackpot.gray
+
+# disable ASLR
+sudo echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+# echo 0  > /proc/sys/kernel/randomize_va_space
+
+# enable ASLR
+sudo echo 2 | sudo tee /proc/sys/kernel/randomize_va_space
+# echo 2  > /proc/sys/kernel/randomize_va_space

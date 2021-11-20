@@ -2,4 +2,5 @@
 
 tag_name="analyze_image_magick"
 docker build . -t "$tag_name" 1>/dev/null && \
-    docker run -it -v "$PWD/":"/project" "$tag_name"
+    # privileged is to change the ASLR \
+    docker run -it --privileged --pid=host -v "$PWD/":"/project" "$tag_name"
